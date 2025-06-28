@@ -1,0 +1,11 @@
+/**
+ * 
+ */
+package com.vividverse.user.repository;
+
+/**
+ * 
+ */
+public interface UserRepository {
+
+}

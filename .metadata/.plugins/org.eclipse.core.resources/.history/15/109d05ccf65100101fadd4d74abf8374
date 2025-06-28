@@ -1,0 +1,5 @@
+package com.vividverse.user.entity;
+
+public class User {
+
+}

@@ -1,0 +1,27 @@
+package com.vividverse.apigateway;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.gateway.route.RouteLocator;
+import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
+import org.springframework.context.annotation.Bean;
+
+@SpringBootApplication
+public class VividVerseApiGatewayApplication { // Line 17 is this line
+
+    public static void main(String[] args) {
+        SpringApplication.run(VividVerseApiGatewayApplication.class, args);
+    }
+
+    @Bean
+    public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
+        return builder.routes()
+            .route("user_service_route", r -> r.path("/users/**")
+                .uri("http://localhost:8081")) // User Service
+            .route("post_service_route", r -> r.path("/posts/**")
+                .uri("http://localhost:8082")) // Post Service
+            .route("comment_service_route", r -> r.path("/comments/**")
+                .uri("http://localhost:8083")) // Comment Service
+            .build();
+    }
+}

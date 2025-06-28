@@ -1,0 +1,5 @@
+package com.vividverse.user.service;
+
+public class UserService {
+
+}

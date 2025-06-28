@@ -1,0 +1,5 @@
+package com.vividverse.user.dto;
+
+public class UserLoginRequest {
+
+}
